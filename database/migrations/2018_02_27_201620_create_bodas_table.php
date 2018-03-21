@@ -14,8 +14,10 @@ class CreateBodasTable extends Migration
     public function up()
     {
         Schema::create('bodas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->increments('id_boda');
+            $table->string('nombre_boda');
+            $table->string('descripcion_boda');
+            $table->string('fecha_boda')->nulleable();
         });
     }
 

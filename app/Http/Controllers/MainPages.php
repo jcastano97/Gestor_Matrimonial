@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Gestor_Matrimonial\Http\Controllers;
 
 use Illuminate\Http\Request;
 

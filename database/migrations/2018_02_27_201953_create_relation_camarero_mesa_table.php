@@ -13,9 +13,13 @@ class CreateRelationCamareroMesaTable extends Migration
      */
     public function up()
     {
-        Schema::create('relation_camarero_mesa', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::create('relacion_camarero_mesa', function (Blueprint $table) {
+            $table->increments('id_camarero_mesa');
+            $table->integer('id_camarero')->unsigned();
+            $table->foreign('id_camarero')->references('id_camarero')->on('camareros');
+            $table->integer('id_mesa')->unsigned();
+            $table->foreign('id_mesa')->references('id_mesa')->on('mesas');
+            $table->string('rol');
         });
     }
 
@@ -26,6 +30,6 @@ class CreateRelationCamareroMesaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('relation_camarero_mesa');
+        Schema::dropIfExists('relacion_camarero_mesa');
     }
 }

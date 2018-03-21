@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Gestor de Matrimonios</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -77,19 +77,26 @@
                 </div>
             @endif
 
-            <div class="content">
+            <div class="content" id="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Gestor de Matrimonios
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="#" onclick="selectedOptionWhatIs()" id="what_is_mm_button">¿Que es gestor matrimonial?</a>
+                    <a href="#" onclick="selectedOptionAboutUs()" id="about_us_button">Sobre nosotros</a>
+                    <a href="https://github.com/JuanoC097/Gestor_Matrimonial" target="_blank">GitHub</a>
                 </div>
+
+                <section id="what_is_mm" style="display: none">
+                    <h1>Administra tu matrimonio</h1>
+                </section>
+
+                <section id="about_us" style="display: none">
+                    <h1>No mucho en realidad</h1>
+                </section>
             </div>
+            <script type='text/javascript' src='{{ asset('js/js_welcome.js') }}'></script>
         </div>
     </body>
 </html>

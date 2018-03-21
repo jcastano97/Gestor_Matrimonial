@@ -14,8 +14,9 @@ class CreateSalasTable extends Migration
     public function up()
     {
         Schema::create('salas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->increments('id_sala');
+            $table->string('nombre_sala');
+            $table->integer('capacidad_sala');
         });
     }
 

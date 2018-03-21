@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCamarerosTable extends Migration
+class CreateTiposregalos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateCamarerosTable extends Migration
      */
     public function up()
     {
-        Schema::create('camareros', function (Blueprint $table) {
-            $table->increments('id_camarero');
-            $table->string('nombre_camarero');
+        Schema::create('tipos_regalos', function (Blueprint $table) {
+            $table->increments('id_tiporegalo');
+            $table->string('nombre_tiporegalo');
         });
     }
 
@@ -26,6 +26,6 @@ class CreateCamarerosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('camareros');
+        Schema::dropIfExists('tipos_regalos');
     }
 }
