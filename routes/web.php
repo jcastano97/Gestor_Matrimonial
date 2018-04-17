@@ -21,15 +21,17 @@ Route::get('/main', 'MainPages@main');
 
 Auth::routes();
 
+// Tienda
+Route::get('/shop','ShopController@index');
+Route::get('/shopB','ShopController@ShopB');
+Route::get('/product/{id}','ShopController@productView');
+Route::get('/shop/{id}','ShopController@categoryView');
 // Bodas
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/newB', 'HomeController@newB');
 Route::get('/newB', 'HomeController@FormNewB');
 Route::get('/deleteB/{id}', 'HomeController@deleteB');
 Route::get('/newPackB/{name}', 'HomeController@newPackB');
-Route::get('/shopB', function(){
-    return view('tiendaBodas');
-});
 Route::get('/boda/{boda_id}', 'BodaController@indexBoda');
 // Sala
 Route::get('/boda/{boda_id}/newS', 'BodaController@FormNewS');
