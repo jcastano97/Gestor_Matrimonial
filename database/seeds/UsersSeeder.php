@@ -15,6 +15,16 @@ class UsersSeeder extends Seeder
             'name' => 'test',
             'email' => 'test@test.com',
             'password' => bcrypt('123456'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'prueba',
+            'email' => 'prueba@gmail.com',
+            'password' => bcrypt('123456'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
         ]);
     }
 }

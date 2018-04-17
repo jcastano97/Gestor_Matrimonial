@@ -14,12 +14,13 @@ class CreateRelationCamareroMesaTable extends Migration
     public function up()
     {
         Schema::create('relacion_camarero_mesa', function (Blueprint $table) {
-            $table->increments('id_camarero_mesa');
+            $table->increments('id');
             $table->integer('id_camarero')->unsigned();
-            $table->foreign('id_camarero')->references('id_camarero')->on('camareros');
+            $table->foreign('id_camarero')->references('id')->on('camareros');
             $table->integer('id_mesa')->unsigned();
-            $table->foreign('id_mesa')->references('id_mesa')->on('mesas');
+            $table->foreign('id_mesa')->references('id')->on('mesas');
             $table->string('rol');
+            $table->timestamps();
         });
     }
 

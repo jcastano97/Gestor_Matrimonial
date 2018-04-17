@@ -14,13 +14,14 @@ class CreateInvitadosTable extends Migration
     public function up()
     {
         Schema::create('invitados', function (Blueprint $table) {
-            $table->increments('id_invitado');
+            $table->increments('id');
             $table->string('nombre_invitado');
             $table->string('direccion_invitado')->nullable();
             $table->integer('id_mesa')->unsigned();
-            $table->foreign('id_mesa')->references('id_mesa')->on('mesas');
-            $table->integer('id_invitador')->unsigned();
-            $table->foreign('id_invitador')->references('id_invitado')->on('invitados')->nullable();
+            $table->foreign('id_mesa')->references('id')->on('mesas');
+            $table->integer('id_invitador')->unsigned()->nullable();
+            $table->foreign('id_invitador')->references('id')->on('invitados');
+            $table->timestamps();
         });
     }
 

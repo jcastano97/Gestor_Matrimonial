@@ -14,12 +14,13 @@ class CreateRegalosTable extends Migration
     public function up()
     {
         Schema::create('regalos', function (Blueprint $table) {
-            $table->increments('id_regalo');
+            $table->increments('id');
             $table->integer('id_tiporegalo')->unsigned();
-            $table->foreign('id_tiporegalo')->references('id_tiporegalo')->on('tipos_regalos')->nullable();
-            $table->string('descripcion_tiporegalo');
+            $table->foreign('id_tiporegalo')->references('id')->on('tipos_regalos')->nullable();
+            $table->string('descripcion_regalo');
             $table->integer('id_invitado')->unsigned();
-            $table->foreign('id_invitado')->references('id_invitado')->on('invitados')->nullable();
+            $table->foreign('id_invitado')->references('id')->on('invitados')->nullable();
+            $table->timestamps();
         });
     }
 

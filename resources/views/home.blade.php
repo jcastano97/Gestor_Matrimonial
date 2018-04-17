@@ -38,9 +38,9 @@
                                         {{ $bodas[$contador]->nombre_boda }} - {{ $bodas[$contador]->cargo }}
                                     </div>
                                     <div class="col-7">
-                                        <a href="{{ url('editB/'.$bodas[$contador]->id_boda) }}"
+                                        <a href="{{ url('boda/'.$bodas[$contador]->id) }}"
                                            class="btn btn-secondary">editar</a>
-                                        <a href="{{ url('deleteB/'.$bodas[$contador]->id_boda)}}"
+                                        <a href="{{ url('deleteB/'.$bodas[$contador]->id)}}"
                                            onclick="return confirm('¿Estas seguro de eliminar este elemento?')"
                                            class="btn btn-danger">
                                             <span class="glyphicon glyphicon-remove-circle" aria-hidden="true">eliminar</span>

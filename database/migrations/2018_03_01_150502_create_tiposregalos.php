@@ -14,8 +14,9 @@ class CreateTiposregalos extends Migration
     public function up()
     {
         Schema::create('tipos_regalos', function (Blueprint $table) {
-            $table->increments('id_tiporegalo');
+            $table->increments('id');
             $table->string('nombre_tiporegalo');
+            $table->timestamps();
         });
     }
 

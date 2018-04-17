@@ -1,5 +1,7 @@
 <?php
 
+use Gestor_Matrimonial\Models\Boda;
+use Gestor_Matrimonial\Models\User_Boda;
 use Illuminate\Database\Seeder;
 
 class BodasSeeder extends Seeder
@@ -11,46 +13,45 @@ class BodasSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('bodas')->insert([
+        Boda::create([
             'nombre_boda' => 'boda 1',
             'descripcion_boda' => 'descripcion boda 1',
             'fecha_boda' => time(),
         ]);
-        DB::table('bodas')->insert([
+        Boda::create([
             'nombre_boda' => 'boda 2',
             'descripcion_boda' => 'descripcion boda 2',
             'fecha_boda' => time(),
         ]);
-        DB::table('bodas')->insert([
+        Boda::create([
             'nombre_boda' => 'boda 3',
             'descripcion_boda' => 'descripcion boda 3',
             'fecha_boda' => time(),
         ]);
-        DB::table('bodas')->insert([
+        Boda::create([
             'nombre_boda' => 'boda 4',
             'descripcion_boda' => 'descripcion boda 4',
             'fecha_boda' => time(),
         ]);
-        DB::table('relacion_usuarios_bodas')->insert([
+        User_Boda::create([
             'id_boda' => 1,
             'id_usuario' => 1,
             'cargo' => 'administrador',
         ]);
-        DB::table('relacion_usuarios_bodas')->insert([
+        User_Boda::create([
             'id_boda' => 2,
             'id_usuario' => 1,
             'cargo' => 'administrador',
         ]);
-        DB::table('relacion_usuarios_bodas')->insert([
+        User_Boda::create([
             'id_boda' => 3,
             'id_usuario' => 1,
             'cargo' => 'administrador',
         ]);
-        DB::table('relacion_usuarios_bodas')->insert([
+        User_Boda::create([
             'id_boda' => 4,
             'id_usuario' => 1,
             'cargo' => 'administrador',
         ]);
-
     }
 }

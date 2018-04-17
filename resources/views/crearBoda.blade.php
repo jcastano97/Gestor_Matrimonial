@@ -6,9 +6,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mx-auto">
-                    <li><a class="nav-link px-md-5" href="{{ route('login') }}">Mis Bodas Administradas</a></li>
-                    <li><a class="nav-link px-md-5" href="{{ route('register') }}">Nueva Boda</a></li>
-                    <li><a class="nav-link px-md-5" href="{{ route('register') }}">Tienda de bodas</a></li>
+                    <li><a class="nav-link px-md-5" href="{{ url('home') }}">Mis Bodas Administradas</a></li>
+                    <li><a class="nav-link px-md-5" href="{{ url('newB') }}">Nueva Boda</a></li>
+                    <li><a class="nav-link px-md-5" href="{{ url('shopB') }}">Tienda de bodas</a></li>
                 </ul>
             </div>
         </div>

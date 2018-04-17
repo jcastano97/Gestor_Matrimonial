@@ -14,9 +14,12 @@ class CreateSalasTable extends Migration
     public function up()
     {
         Schema::create('salas', function (Blueprint $table) {
-            $table->increments('id_sala');
+            $table->increments('id');
             $table->string('nombre_sala');
-            $table->integer('capacidad_sala');
+            $table->integer('capacidad_sala')->default(0);
+            $table->integer('id_boda')->unsigned();
+            $table->foreign('id_boda')->references('id')->on('bodas')->nulleable();
+            $table->timestamps();
         });
     }
 

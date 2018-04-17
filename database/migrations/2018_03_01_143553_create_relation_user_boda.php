@@ -14,12 +14,13 @@ class CreateRelationUserBoda extends Migration
     public function up()
     {
         Schema::create('relacion_usuarios_bodas', function (Blueprint $table) {
-            $table->increments('id_usuario_boda');
+            $table->increments('id');
             $table->integer('id_boda')->unsigned();
-            $table->foreign('id_boda')->references('id_boda')->on('bodas');
+            $table->foreign('id_boda')->references('id')->on('bodas');
             $table->integer('id_usuario')->unsigned();
             $table->foreign('id_usuario')->references('id')->on('users');
             $table->string('cargo');
+            $table->timestamps();
         });
     }
 

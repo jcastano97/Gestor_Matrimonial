@@ -14,8 +14,9 @@ class CreateCamarerosTable extends Migration
     public function up()
     {
         Schema::create('camareros', function (Blueprint $table) {
-            $table->increments('id_camarero');
+            $table->increments('id');
             $table->string('nombre_camarero');
+            $table->timestamps();
         });
     }
 
