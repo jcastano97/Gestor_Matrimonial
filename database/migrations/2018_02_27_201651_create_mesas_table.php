@@ -18,7 +18,7 @@ class CreateMesasTable extends Migration
             $table->integer('numero_mesa');
             $table->integer('capacidad_mesa');
             $table->integer('id_sala')->unsigned();
-            $table->foreign('id_sala')->references('id')->on('salas')->nulleable();
+            $table->foreign('id_sala')->references('id')->on('salas')->nullable();
             $table->timestamps();
         });
     }

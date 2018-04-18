@@ -17,7 +17,7 @@ class CreateBodasTable extends Migration
             $table->increments('id');
             $table->string('nombre_boda');
             $table->string('descripcion_boda');
-            $table->string('fecha_boda')->nulleable();
+            $table->string('fecha_boda')->nullable();
             $table->timestamps();
         });
     }

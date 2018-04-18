@@ -14,15 +14,11 @@
         </div>
     </nav>
     <div class="py-2">
-        <a href="{{url('/shop')}}">Tienda</a> -> <a href="{{url('product/'.$producto->id)}}">{{$producto->name}}</a>
+        <a href="{{url('/shop')}}">Tienda</a> -> <a href="{{url('shop/'.$category->id)}}">{{$category->name}}</a> -> <a href="{{url('product/'.$producto->id)}}">{{$producto->name}}</a>
     </div>
     <div class="container">
-
         <div class="col-12 py-2">
             <div class="card card-default">
-                <div class="card-header">
-
-                </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
@@ -32,12 +28,15 @@
                             <h1>{{$producto->name}}</h1>
                             <p>{{$producto->description}}</p>
                             <h3>Precio: ${{$producto->price}} cop</h3>
-                            <button></button>
+                            @if($product_added)
+                                <a href="{{url('product/remove/'.$producto->id)}}" class="btn btn-danger">Eliminar del carrito</a>
+                            @else
+                                <a href="{{url('product/add/'.$producto->id)}}" class="btn btn-success">Añadir al carrito</a>
+                            @endif
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 @endsection

@@ -32,6 +32,18 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        @if(isset($count_shop))
+                            <li>
+                                <a class="nav-link" href="{{ url('shopping_cart') }}">
+                                    <div class="shopping_cart_div">
+                                        @if($count_shop != 0)
+                                            <label class="shopping_cart_text">{{$count_shop}}</label>
+                                        @endif
+                                        <img src="{{url('img/shopping_cart.png')}}" class="shopping_cart">
+                                    </div>
+                                </a>
+                            </li>
+                        @endif
                         <li><a class="nav-link" href="{{ route('home') }}">Home</a></li>
                         <!-- Authentication Links -->
                         @guest
@@ -43,9 +55,14 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="{{ url('pay_history') }}">
+                                        Historial de pagos
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                 document.getElementById('logout-form').submit();">
                                         Logout
                                     </a>
 

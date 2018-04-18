@@ -6,3 +6,19 @@
     color: black;
     text-decoration:none
 }
+
+.shopping_cart{
+    width: auto;
+    height: 100%;
+}
+.shopping_cart_div{
+    height: 30px;
+}
+.shopping_cart_text{
+    background-color: darkred;
+    color: white;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+}

@@ -18,7 +18,7 @@ class CreateSalasTable extends Migration
             $table->string('nombre_sala');
             $table->integer('capacidad_sala')->default(0);
             $table->integer('id_boda')->unsigned();
-            $table->foreign('id_boda')->references('id')->on('bodas')->nulleable();
+            $table->foreign('id_boda')->references('id')->on('bodas')->nullable();
             $table->timestamps();
         });
     }

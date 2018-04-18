@@ -24,8 +24,15 @@ Auth::routes();
 // Tienda
 Route::get('/shop','ShopController@index');
 Route::get('/shopB','ShopController@ShopB');
-Route::get('/product/{id}','ShopController@productView');
+Route::get('/shopping_cart','ShopController@shoppingCart');
+Route::get('/pay','ShopController@Pay');
+Route::get('/show_pay/{id}','ShopController@showPay');
 Route::get('/shop/{id}','ShopController@categoryView');
+Route::get('/product/{id}','ShopController@productView');
+Route::get('/product/add/{id}', 'ShopController@productAdd');
+Route::get('/product/remove/{id}', 'ShopController@productRemove');
+Route::get('/product/remove_p/{id}', 'ShopController@productRemove_p');
+Route::get('/pay_history', 'ShopController@payHistory');
 // Bodas
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/newB', 'HomeController@newB');
