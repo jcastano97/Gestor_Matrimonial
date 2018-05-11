@@ -40,6 +40,7 @@ Route::get('/newB', 'HomeController@FormNewB');
 Route::get('/deleteB/{id}', 'HomeController@deleteB');
 Route::get('/newPackB/{name}', 'HomeController@newPackB');
 Route::get('/boda/{boda_id}', 'BodaController@indexBoda');
+Route::get('/boda/{boda_id}/consultar_invitados', 'BodaController@consultar_invitados');
 // Sala
 Route::get('/boda/{boda_id}/newS', 'BodaController@FormNewS');
 Route::post('/boda/{boda_id}/newS', 'BodaController@newS');

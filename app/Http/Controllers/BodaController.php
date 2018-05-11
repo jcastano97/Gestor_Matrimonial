@@ -39,6 +39,27 @@ class BodaController extends Controller
         return view('crearSala', ['boda_id' => $boda_id]);
     }
 
+    public function consultar_invitados($boda_id)
+    {
+        $salas = DB::table('salas')->where('id_boda', $boda_id)->get();
+
+        $mesas = array();
+        for($contador = 0; $contador < count($salas); $contador++){
+            if (DB::table('mesas')->where('id_sala', $salas[$contador]->id)->first()){
+                array_push($mesas, DB::table('mesas')->where('id_sala', $salas[$contador]->id)->first());
+            }
+        }
+
+        $invitados = array();
+        for($contador = 0; $contador < count($mesas); $contador++){
+            if (DB::table('invitados')->where('id_mesa', $mesas[$contador]->id)->first()){
+                array_push($invitados, DB::table('invitados')->where('id_mesa', $mesas[$contador]->id)->first());
+            }
+        }
+
+        return view('ConsultarInvitados', ['boda_id' => $boda_id, 'salas' => $salas, 'mesas' => $mesas, 'invitados' => $invitados]);
+    }
+
     public function newS($boda_id)
     {
         $data = Request()->validate([
@@ -115,14 +136,17 @@ class BodaController extends Controller
     public function newI($boda_id, $sala_id, $mesa_id)
     {
         $data = Request()->validate([
+            'cedula' => 'required',
             'name' => 'required',
             'address' => 'required',
         ], [
+            'cedula.required' => 'El campo es obligatorio',
             'name.required' => 'El campo es obligatorio',
             'address.required' => 'El campo es obligatorio',
         ]);
 
         Invitado::create([
+            'cedula' => $data['cedula'],
             'nombre_invitado' => $data['name'],
             'direccion_invitado' => $data['address'],
             'id_mesa' => $mesa_id,

@@ -25,6 +25,19 @@
                             {{ csrf_field() }}
                             <div class="row justify-content-center px-5">
                                 <div class="col-md-3 col-form-label text-md-right">
+                                    <label for="cedula" class="bl">Cedula:</label>
+                                </div>
+                                <div class="col-md-5">
+                                    <input type="number" name="cedula" id="cedula" placeholder="cedula" class="form-control{{ $errors->has('cedula') ? ' is-invalid' : '' }}">
+                                    @if ($errors->has('cedula'))
+                                        <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('cedula') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="row justify-content-center px-5">
+                                <div class="col-md-3 col-form-label text-md-right">
                                     <label for="name" class="bl">Nombre:</label>
                                 </div>
                                 <div class="col-md-5">

@@ -9,6 +9,7 @@
                     <li><a class="nav-link px-md-5" href="{{ url('home') }}">Mis Bodas Administradas</a></li>
                     <li><a class="nav-link px-md-5" href="{{ url('boda/'.$boda_id) }}">Mi Boda</a></li>
                     <li><a class="nav-link px-md-5" href="{{ url('boda/'.$boda_id.'/newS') }}">Nueva Sala</a></li>
+                    <li><a class="nav-link px-md-5" href="{{ url('boda/'.$boda_id.'/consultar_invitados') }}">Consultar Invitados</a></li>
                 </ul>
             </div>
         </div>

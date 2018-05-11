@@ -15,6 +15,7 @@ class CreateInvitadosTable extends Migration
     {
         Schema::create('invitados', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('cedula')->nullable();
             $table->string('nombre_invitado');
             $table->string('direccion_invitado')->nullable();
             $table->integer('id_mesa')->unsigned();
