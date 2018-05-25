@@ -35,7 +35,8 @@ class HomeController extends Controller
             $ObjToPush->cargo = $boda_id->cargo;
             array_push($bodas, $ObjToPush);
         }
-        return view('home', ['bodas' => $bodas]);
+        $user = User::find(Auth::id());
+        return view('home', ['bodas' => $bodas, 'user_role' => $user->role]);
     }
 
     public function FormNewB()
@@ -94,6 +95,19 @@ class HomeController extends Controller
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
+            $id_sala = DB::table('salas')->insertGetId([
+                'nombre_sala' => 'Sala 1',
+                'id_boda' => $id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+            for ($i = 1; $i < 11; $i++) {
+                DB::table('mesas')->insertGetId([
+                    'numero_mesa' => $i,
+                    'capacidad_mesa' => 5,
+                    'id_sala' => $id_sala
+                ]);
+            }
         }elseif($name == "deluxe"){
             $id = DB::table('bodas')->insertGetId([
                 'nombre_boda' => 'Boda deluxe',
@@ -102,6 +116,36 @@ class HomeController extends Controller
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
+            $id_sala = DB::table('salas')->insertGetId([
+                'nombre_sala' => 'Sala 1',
+                'id_boda' => $id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+            for ($i = 1; $i < 11; $i++) {
+                DB::table('mesas')->insertGetId([
+                    'numero_mesa' => $i,
+                    'capacidad_mesa' => 5,
+                    'id_sala' => $id_sala,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ]);
+            }
+            $id_sala = DB::table('salas')->insertGetId([
+                'nombre_sala' => 'Sala 2',
+                'id_boda' => $id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+            for ($i = 1; $i < 11; $i++) {
+                DB::table('mesas')->insertGetId([
+                    'numero_mesa' => $i,
+                    'capacidad_mesa' => 5,
+                    'id_sala' => $id_sala,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ]);
+            }
         }else{
             $id = DB::table('bodas')->insertGetId([
                 'nombre_boda' => 'Boda premium',
@@ -110,6 +154,81 @@ class HomeController extends Controller
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
+            $id_sala = DB::table('salas')->insertGetId([
+                'nombre_sala' => 'Sala 1',
+                'id_boda' => $id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+            for ($i = 1; $i < 11; $i++) {
+                DB::table('mesas')->insertGetId([
+                    'numero_mesa' => $i,
+                    'capacidad_mesa' => 4,
+                    'id_sala' => $id_sala,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ]);
+            }
+            $id_sala = DB::table('salas')->insertGetId([
+                'nombre_sala' => 'Sala 2',
+                'id_boda' => $id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+            for ($i = 1; $i < 11; $i++) {
+                DB::table('mesas')->insertGetId([
+                    'numero_mesa' => $i,
+                    'capacidad_mesa' => 4,
+                    'id_sala' => $id_sala,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ]);
+            }
+            $id_sala = DB::table('salas')->insertGetId([
+                'nombre_sala' => 'Sala 3',
+                'id_boda' => $id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+            for ($i = 1; $i < 11; $i++) {
+                DB::table('mesas')->insertGetId([
+                    'numero_mesa' => $i,
+                    'capacidad_mesa' => 4,
+                    'id_sala' => $id_sala,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ]);
+            }
+            $id_sala = DB::table('salas')->insertGetId([
+                'nombre_sala' => 'Sala 4',
+                'id_boda' => $id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+            for ($i = 1; $i < 11; $i++) {
+                DB::table('mesas')->insertGetId([
+                    'numero_mesa' => $i,
+                    'capacidad_mesa' => 4,
+                    'id_sala' => $id_sala,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ]);
+            }
+            $id_sala = DB::table('salas')->insertGetId([
+                'nombre_sala' => 'Sala 5',
+                'id_boda' => $id,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+            for ($i = 1; $i < 11; $i++) {
+                DB::table('mesas')->insertGetId([
+                    'numero_mesa' => $i,
+                    'capacidad_mesa' => 4,
+                    'id_sala' => $id_sala,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ]);
+            }
         }
 
         User_Boda::create([

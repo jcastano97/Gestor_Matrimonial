@@ -19,6 +19,7 @@ class CreatePaymentTable extends Migration
             $table->string('reference_pay');
             $table->boolean('accept_pay');
             $table->integer('value_pay');
+            $table->string('signature')->nullable();
             $table->timestamps();
         });
     }

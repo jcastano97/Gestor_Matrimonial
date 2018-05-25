@@ -28,7 +28,7 @@
                                     <label for="cedula" class="bl">Cedula:</label>
                                 </div>
                                 <div class="col-md-5">
-                                    <input type="number" name="cedula" id="cedula" placeholder="cedula" class="form-control{{ $errors->has('cedula') ? ' is-invalid' : '' }}">
+                                    <input type="text" maxlength="10" name="cedula" id="cedula" placeholder="cedula" class="form-control{{ $errors->has('cedula') ? ' is-invalid' : '' }}">
                                     @if ($errors->has('cedula'))
                                         <span class="invalid-feedback">
                                         <strong>{{ $errors->first('cedula') }}</strong>
@@ -67,7 +67,7 @@
                                     <label for="name" class="bl">Teléfono:</label>
                                 </div>
                                 <div class="col-md-5">
-                                    <input type="text" name="phone" id="phone" placeholder="3128812312" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}">
+                                    <input type="text" name="phone" maxlength="14" id="phone" placeholder="3128812312" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}">
                                     @if ($errors->has('phone'))
                                         <span class="invalid-feedback">
                                         <strong>{{ $errors->first('phone') }}</strong>

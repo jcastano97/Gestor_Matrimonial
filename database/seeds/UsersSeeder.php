@@ -23,6 +23,7 @@ class UsersSeeder extends Seeder
             'name' => 'prueba',
             'email' => 'prueba@gmail.com',
             'password' => bcrypt('123456'),
+            'role' => 'ADMIN',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);

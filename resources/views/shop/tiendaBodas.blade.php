@@ -63,7 +63,7 @@
                     </div>
                     <div class="card-body">
                         <p>Paquete premium la boda incluye:</p>
-                        <p>* 4 Sala</p>
+                        <p>* 5 Sala</p>
                         <p>* 50 Mesas</p>
                         <p>* 200 Personas</p>
                     </div>

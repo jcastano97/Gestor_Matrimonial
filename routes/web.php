@@ -21,6 +21,12 @@ Route::get('/main', 'MainPages@main');
 
 Auth::routes();
 
+// Productos
+Route::get('/product','ProductController@index')->name('product');
+Route::post('/newProduct','ProductController@newProduct');
+Route::get('/newProduct', 'ProductController@newProductView');
+Route::get('/deleteProduct/{id}', 'ProductController@deleteProduct');
+
 // Tienda
 Route::get('/shop','ShopController@index');
 Route::get('/shopB','ShopController@ShopB');

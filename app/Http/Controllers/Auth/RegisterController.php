@@ -2,9 +2,11 @@
 
 namespace Gestor_Matrimonial\Http\Controllers\Auth;
 
+use Gestor_Matrimonial\Mail\welcome;
 use Gestor_Matrimonial\User;
 use Gestor_Matrimonial\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -63,12 +65,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
+        //Mail::to($user)->send(new welcome($user));
+        return $user;
     }
 }

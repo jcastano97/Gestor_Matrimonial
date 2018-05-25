@@ -5,6 +5,7 @@ namespace Gestor_Matrimonial\Http\Controllers;
 use Gestor_Matrimonial\Models\Payment;
 use Gestor_Matrimonial\Models\Product;
 use Gestor_Matrimonial\Models\Shopping_Cart;
+use Gestor_Matrimonial\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -143,8 +144,15 @@ class ShopController extends Controller
         ])->get();
 
         $total = 0;
+        $uid = uniqid();
 
-        $pay = Payment::create(['id_user' => Auth::id(), 'reference_pay' => uniqid(), 'accept_pay' => 0, 'value_pay' => $total]);
+        $pay = Payment::create([
+            'id_user' => Auth::id(),
+            'reference_pay' => $uid,
+            'accept_pay' => 0,
+            'value_pay' => $total,
+            'signature' => md5("4Vj8eK4rloUd272L48hsrarnUA~508029~$uid~$total~COP")
+        ]);
 
         foreach ($shops as $shop){
             $price = Product::find($shop->id_product)->price;
@@ -156,7 +164,14 @@ class ShopController extends Controller
         $pay->value_pay = $total;
         $pay->update();
 
-        return redirect(url('/show_pay/'.$pay->id));
+        $user = User::find(Auth::id());
+        return view('shop/redirect_pay', ['pay' => $pay, 'user' => $user]);
+    }
+
+    public function go_to_payu($pay_id){
+        $pay = Payment::find($pay_id);
+        $user = User::find(Auth::id());
+        return view('shop/redirect_pay', ['pay' => $pay, 'user' => $user]);
     }
 
     public function payHistory(){
@@ -166,4 +181,5 @@ class ShopController extends Controller
 
         return view('shop/pay_history', ['payments' => $payments]);
     }
+
 }

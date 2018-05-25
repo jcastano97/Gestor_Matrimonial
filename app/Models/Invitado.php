@@ -9,6 +9,6 @@ class Invitado extends Model
     protected $table = 'invitados';
 
     protected $fillable = array(
-        'cedula', 'nombre_invitado', 'direccion_invitado', 'id_mesa', 'id_invitador'
+        'cedula', 'nombre_invitado', 'direccion_invitado', 'id_mesa', 'id_invitador', 'telefono'
     );
 }

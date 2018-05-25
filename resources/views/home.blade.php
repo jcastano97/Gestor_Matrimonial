@@ -9,6 +9,9 @@
                 <li><a class="nav-link px-md-5" href="{{ url('home') }}">Mis Bodas Administradas</a></li>
                 <li><a class="nav-link px-md-5" href="{{ url('newB') }}">Nueva Boda</a></li>
                 <li><a class="nav-link px-md-5" href="{{ url('shop') }}">Tienda</a></li>
+                @if (isset($user_role) && $user_role == "ADMIN")
+                <li><a class="nav-link px-md-5" href="{{ url('product') }}">Ver Productos(ADMIN)</a></li>
+                @endif
             </ul>
         </div>
     </div>

@@ -18,6 +18,7 @@ class CreateInvitadosTable extends Migration
             $table->integer('cedula')->nullable();
             $table->string('nombre_invitado');
             $table->string('direccion_invitado')->nullable();
+            $table->string('telefono')->nullable();
             $table->integer('id_mesa')->unsigned();
             $table->foreign('id_mesa')->references('id')->on('mesas');
             $table->integer('id_invitador')->unsigned()->nullable();
